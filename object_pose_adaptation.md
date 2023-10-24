@@ -533,7 +533,7 @@ This work proposes an <b>integration pipeline to allow vision-based adaptation o
 
 <p align="justify">
 <font style="font-size:1.3rem;font-family:'Georgia',serif;">
-Authors deeply thank Pr. Sven Behnke andthe members of the AIS lab of Bonn for their warm welcome and support.
+Authors deeply thank Pr. Sven Behnke and the members of the AIS lab of Bonn for their warm welcome and support.
 </font>
 </p>
 
@@ -572,11 +572,11 @@ AD011014320).
 
 <br>
 
-Y. Labbé, L. Manuelli, A. Mousavian, S. Tyree, S. Birchfield, J. Tremblay, J. Carpentier, M. Aubry, D. Fox, and J. Sivic, “MegaPose: 6D Pose Estimation of Novel Objects via Render & Compare,” in 6th Annual Conference on Robot Learning, Aug. 2022.
+<i>Y. Labbé, L. Manuelli, A. Mousavian, S. Tyree, S. Birchfield, J. Tremblay, J. Carpentier, M. Aubry, D. Fox, and J. Sivic, “MegaPose: 6D Pose Estimation of Novel Objects via Render & Compare,” in 6th Annual Conference on Robot Learning, Aug. 2022.</i>
 
 <br>
 
-M. Stoiber, M. Sundermeyer, and R. Triebel, “Iterative Corresponding Geometry: Fusing Region and Depth for Highly Efficient 3D Tracking of Textureless Objects,” in 2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). New Orleans, LA, USA: IEEE, June 2022, pp. 6845–6855.
+<i>M. Stoiber, M. Sundermeyer, and R. Triebel, “Iterative Corresponding Geometry: Fusing Region and Depth for Highly Efficient 3D Tracking of Textureless Objects,” in 2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). New Orleans, LA, USA: IEEE, June 2022, pp. 6845–6855.</i>
 
 
 <br>
