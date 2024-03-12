@@ -50,7 +50,7 @@
 </div>
 <br>
 <p align="justify">
-&bull; <font><i>Speeding up 6-DoF Grasp Sampling with Quality-Diversity, Huber, J., Hélénon, F., Kappel, M., Chelly, E., Khoramshahi, M., Ben Amar, F., Doncieux, S. (2024)</i></font> (<a href="https://arxiv.org/abs/2403.06173" target="_blank"><b>Paper</b></a> | <a href="https://qdgrasp.github.io/qdgrasp/generating_grasp_poses/"><b>Blog post</b></a> | <a href="https://gitlab.isir.upmc.fr/l2g/qd_grasp_6dof"><b>Code</b></a> | Video: soon)<br><br>
+&bull; <font><i>Speeding up 6-DoF Grasp Sampling with Quality-Diversity, Huber, J., Hélénon, F., Kappel, M., Chelly, E., Khoramshahi, M., Ben Amar, F., Doncieux, S. (2024)</i></font> (<a href="https://arxiv.org/abs/2403.06173" target="_blank"><b>Paper</b></a> | <a href="https://qdgrasp.github.io/qdgrasp/generating_grasp_poses/"><b>Blog post</b></a> | <a href="https://gitlab.isir.upmc.fr/l2g/qd_grasp_6dof"><b>Code</b></a> | <a href="https://cloud.isir.upmc.fr/s/sqXpAtrrkSiM3SX"><b>Video</b></a>)<br><br>
 </p>
 <div align="center" style="vertical-align:bottom ; text-align:center">
 	<img src="/assets/blog_posts/qd_6dof/shadow_tennis.gif" style="width:280px;">
