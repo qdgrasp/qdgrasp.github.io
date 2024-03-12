@@ -125,10 +125,6 @@ navigation_header:
   url: https://qdgrasp.github.io/
 - title: About
   url: https://qdgrasp.github.io/about/
-- title: Papers
-  url: https://qdgrasp.github.io/papers/
-- title: Github
-  url: https://github.com/Johann-Huber/qd_grasp/
 
 navigation_footer:
 - title: 

@@ -113,6 +113,45 @@
 
 
 
+<br>
+<br>
+<br>
+
+
+
+##### Speeding up 6-DoF Grasp Sampling with Quality-Diversity
+
+
+
+<br>
+
+<p align="justify">
+<font style="font-size:1.3rem;font-family:'Georgia',serif;">An increasing number of work leverage 6DoF grasping dataset to train generative models for predicting grasp poses on unknown objects. To generate the grasps, elements are randomly sample in a search space defined with respect to priors. This work exploit Quality-Diversity optimization to speed up this process. By combining previous work on QD with the standard grasping priors, large repertoires of diverse and robusts 6DoF grasp poses are more efficiently produced on different grippers. Simulation-to-reality deployments completed on two plateforms show the exploitability of the data generated.</font>
+</p>
+
+
+<br>
+<br>
+
+
+
+<div align="center" style="vertical-align:bottom ; text-align:center">
+	<img src="/assets/blog_posts/qd_6dof/barrett_banana.gif" style="width:280px;"><img src="/assets/blog_posts/qd_6dof/shadow_tennis.gif" style="width:280px;">
+</div>
+
+<br>
+
+<font color="#b7b7b7"><i>Speeding up 6-DoF Grasp Sampling with Quality-Diversity, Huber, J., Hélénon, F., Kappel, M., Chelly, E., Khoramshahi, M., Ben Amar, F., Doncieux, S. (2024)</i></font>
+
+
+<br>
+
+<div align="center">
+	<b>Paper soon</b> &bull; <a href="https://qdgrasp.github.io/qdgrasp/object_pose_adaptation/"><b>Blog post</b></a>
+</div>
+
+
+
 
 <br>
 <br>

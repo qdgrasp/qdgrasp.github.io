@@ -11,14 +11,14 @@
 
 
 <div align="center">
-	<h1>Adapting Grasps to Any Object Position</h1>
+	<h1>Leverage QD for an easily transferable vision-based grasping module</h1>
 </div>
 
 <br>
 <br>
 
 <div align="center">
-	<font color="#b7b7b7" style="font-size:1.5rem"><b>Learning to Grasp: From Somewhere to Anywhere</b></font>
+	<font color="#b7b7b7" style="font-size:1.5rem"><b>Toward a Plug-and-Play Vision-Based Grasping Module for Robotics</b></font>
 </div>
 
 <div align="center">
@@ -43,33 +43,13 @@
 
 
 
-### Beyond the simulated initial conditions
+### The virtues of sequential approaches for grasping: energy cost, and interpretability
 
 <br>
 
 <p align="justify" class="space"> 
 <font style="font-size:1.35rem;font-family:'Charter',serif;">
-Quality-Diversity methods can be used to <a href="https://qdgrasp.github.io/qdgrasp/generating_the_data/">automatically generate large grasping datasets</a> that can be <a href="https://qdgrasp.github.io/qdgrasp/sim2real_labelling/">exploited into the real world</a>. However, the generated reach-and-grasps trajectories are open-loop: a significant modification of the initial conditions makes a generated grasp fail. 
-</font>
-</p>
-
-<br>
-<br>
-
-<div align="center" style="vertical-align:bottom ; text-align:center">
-	<img src="/assets/blog_posts/qd_adapt/mug_open_loop_aligned.gif" style="width:300px;"> 
-	<img src="/assets/blog_posts/qd_adapt/mug_open_loop_shifted.gif" style="width:300px;"> 
-</div>
-<div align="center" style="vertical-align:bottom ; text-align:center">
-	<font color="#b7b7b7">Automatically generated open-loop grasping trajectory under simulation conditions (left) or with shifted object pose (right).</font>
-</div>
-
-<br>
-<br>
-
-<p align="justify" class="space"> 
-<font style="font-size:1.35rem;font-family:'Charter',serif;">
-The grasping skill requires the ability to perform the grasp on objects regardless of their position and orientation – as long as they remain in the agent's operational space. <b>A grasping trajectory can easily be generalized</b> to any state in the operational space by <b>converting the corresponding positions and orientations from the world frame to the object frame</b>. This idea fixes the abovementioned constraint, making the grasping datasets suited to any object state <b>without requiring additional iteration</b> of the QD grasp generator algorithm.
+Data-greedy approaches are becoming the main paradigm in robotics nowadays. Grasping is more and more addressed with generative AI methods (Urain et al., 2023)(Barad et al., 2023)(Chen et al., 2024), while the training of end-to-end controllers for mobile manipulators involves extremely large Transformers-based architecture and manually collected datasets (Brohan et al., 2023.a)(Brohan et al., 2023.b). Despite their promising generalization capabilities, the cost of those methods raises concerns about how to make such energy-demanding approaches sustainable (Thompson et al., 2020) and interpretable.
 </font>
 </p>
 
@@ -78,29 +58,33 @@ The grasping skill requires the ability to perform the grasp on objects regardle
 <br>
 
 <div align="center" style="vertical-align:bottom ; text-align:center">
-	<img src="/assets/blog_posts/qd_adapt/qd_grasp_adapt_pipeline_overview.png" style="width:600px;"> 
+	<img src="/assets/blog_posts/qd_adapt/rt_1_screenshot.png" style="width:250px;"> 
 </div>
 <div align="center" style="vertical-align:bottom ; text-align:center">
-	<font color="#b7b7b7">Overview of the proposed approach.</font>
+	<font color="#b7b7b7">Data-greedy approaches trade energy consumption and interpretability for generalization (Urain et al., 2023).</font>
 </div>
 
 
 <br>
-
 <br>
 
 <p align="justify" class="space"> 
-<font style="font-size:1.35rem;">
-Applying this idea to the real world raises a big challenge: getting an accurate 6DoF (Degree-of-Freedom) pose of a targeted object is an open problem (Tyree et al., 2022). There is currently no off-the-shelf module for doing reliable 6DoF pose prediction from an RGB-D camera.
+<font style="font-size:1.35rem;font-family:'Charter',serif;">
+However, the usage of data-greedy methods is recent in the history of Robotics (Newbury et al., 2023). For a long time, grasping was addressed with analytic-based approaches and motion planning (Sahbani et al., 2012). The issue was the limited adaptation capabilities that the data-greedy approach can circumvent. Many skills should be addressable with significantly less energy cost than the large AI models, with enough generalization to provide robots the capability to solve a wide range of tasks in open environments while keeping a certain level of interpretability and control on the grasping robot decision process. 
 </font>
+</p>
 
 <br>
 <br>
 
-<font style="font-size:1.35rem;">
-This paper proposes grasping trajectory adaptation for generalizing automatically generated grasps to any object's initial states. To do so, we have implemented an integration pipeline that performs accurate 6DoF pose estimation for YCB objects. Overall, our pipeline involves 4 publicly available research modules for generating the grasps, detecting the object pose, and allowing generalization with tracking.
-</font>
 
+
+
+
+<p align="justify" class="space"> 
+<font style="font-size:1.35rem;font-family:'Charter',serif;">
+This paper introduces <b>modular vision-based grasping framework</b> that can be leveraged to make robots <b>learn to grasp known objects with a limited computational cost and better control than the data-greedy approaches</b>. Based on <a href="https://qdgrasp.github.io/qdgrasp/generating_the_data/"> recent works in Quality-Diversity (QD) methods</a>, the proposed framework builds repertoires of diverse grasping trajectories for a given robotic manipulator and a set of objects. At deployment time, a vision pipeline of open-source modules predicts the targeted object state (6DoF pose, including position and orientation). A trajectory is then selected and adapted relatively to the predicted object pose. 
+</font>
 </p>
 
 
@@ -120,7 +104,7 @@ This paper proposes grasping trajectory adaptation for generalizing automaticall
 <br>
 
 <div align="center" style="vertical-align:bottom ; text-align:center">
-	<img src="/assets/blog_posts/qd_adapt/qd_grasp_adapt_pipeline_grasp_generation.png" style="width:600px;"> 
+	<img src="/assets/blog_posts/qd_adapt/refactore/qd_adapt_principle.png" style="width:600px;"> 
 </div>
 
 <br>
@@ -161,14 +145,6 @@ The reach-and-grasp trajectories are generated with QD algorithms, similarly to 
 
 
 ##### 6DoF Pose Prediction
-
-
-<br>
-<br>
-
-<div align="center" style="vertical-align:bottom ; text-align:center">
-	<img src="/assets/blog_posts/qd_adapt/qd_grasp_adapt_pipeline_perception.png" style="width:600px;"> 
-</div>
 
 
 <br>
@@ -252,20 +228,13 @@ The reach-and-grasp trajectory can finally be adapted using the tracked estimate
 
 ##### Trajectory Adaptation
 
-<br>
-<br>
-
-<div align="center" style="vertical-align:bottom ; text-align:center">
-	<img src="/assets/blog_posts/qd_adapt/qd_grasp_adapt_pipeline_adaptation.png" style="width:600px;"> 
-</div>
-
 
 <br>
 <br>
 
 
 <div align="center" style="vertical-align:bottom ; text-align:center">
-	<img src="/assets/blog_posts/qd_adapt/problem_definition.png" style="width:450px;">
+	<img src="/assets/blog_posts/qd_adapt/refactore/qd_adapt_notations.png" style="width:450px;">
 </div>
 
 <div align="center" style="vertical-align:bottom ; text-align:center">
@@ -315,14 +284,6 @@ The adapted grasping trajectory is not necessarily fully exploitable. Some poses
 <br>
 
 <div align="center" style="vertical-align:bottom ; text-align:center">
-	<img src="/assets/blog_posts/qd_adapt/qd_grasp_adapt_pipeline_all.png" style="width:600px;"> 
-</div>
-
-
-<br>
-<br>
-
-<div align="center" style="vertical-align:bottom ; text-align:center">
 	<img src="/assets/blog_posts/qd_adapt/mug_tracking_simu_x4speedup.gif" style="width:450px;"> 
 </div>
 <div align="center" style="vertical-align:bottom ; text-align:center">
@@ -343,9 +304,6 @@ The above animation shows the adaptation of a QD-generated grasping trajectory t
 <br>
 <br>
 <br>
-<br>
-<br>
-
 
 
 
@@ -374,8 +332,7 @@ The above animation shows the adaptation of a QD-generated grasping trajectory t
 
 
 <div align="center" style="vertical-align:bottom ; text-align:center">
-	<img src="/assets/blog_posts/qd_adapt/plots/translation_only_count.png" style="width:600px;">
-	<img src="/assets/blog_posts/qd_adapt/plots/mug_11250_trajectories_27_rotations_with_translation_count_cropped.png" style="width:600px;">
+	<img src="/assets/blog_posts/qd_adapt/refactore/qd_adapt_res_sim.png" style="width:650px;">
 </div>
 <div align="center" style="vertical-align:bottom ; text-align:center">
 	<font color="#b7b7b7">For 5 randomly sampled trajectories, how many of them are still valid for translated (top) or translated + rotated object state (bottom)? (See the paper for details.)</font>
@@ -409,7 +366,7 @@ The approach has been validated on two real robots: a Franka Research 3 arm with
 <br>
 
 <div align="center" style="vertical-align:bottom ; text-align:center">
-	<img src="/assets/blog_posts/qd_adapt/setup_experiment.png" style="width:500px;">
+	<img src="/assets/blog_posts/qd_adapt/refactore/qd_adapt_scenes.png" style="width:500px;">
 </div>
 <div align="center" style="vertical-align:bottom ; text-align:center">
 	<font color="#b7b7b7">Experimental setups.</font>
@@ -518,7 +475,7 @@ This work has some limitations. First, the vision noise can lead to wrong 6DoF p
 
 <p align="justify" class="space"> 
 <font style="font-size:1.35rem;">
-This work proposes an <b>integration pipeline to allow vision-based adaptation of automatically generated grasping trajectories</b>. Results on several robots – including a 2-fingers gripper and a dexterous hand – show that trajectories that were initially restricted to the simulated object position <b>can be exploited all over the operational space</b>. This work demonstrates that QD-generated grasping datasets can be used for vision-based open-loop grasping. It also suggests that QD-generated datasets can be generalized to a wide range of object positions and orientations for producing large-scale grasping datasets that can be used for learning close-loop policies.
+This paper proposes a <b>framework to build a plug-and-play vision-based grasping module</b>. It can <b>easily be adapted to different robotic platforms</b> and allows the robot to <b>robustly grasp objects in a diverse manner</b>. We believe this modular framework to be an affordable alternative to the computationally greedy foundation-model-based approaches and a promising path to make different kinds of mobile robots interact with known objects in a controllable manner in the near future.
 </font>
 </p>
 
@@ -556,7 +513,36 @@ AD011014320).
 
 ### References
 
-<i>Tyree, S., Tremblay, J., To, T., Cheng, J., Mosier, T., Smith, J., & Birchfield, S. (2022, October). 6-DoF pose estimation of household objects for robotic manipulation: An accessible dataset and benchmark. In 2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (pp. 13081-13088). IEEE.</i>
+
+<i>Urain, J., Funk, N., Peters, J., \& Chalvatzaki, G. (2023, May). Se (3)-diffusionfields: Learning smooth cost functions for joint grasp and motion optimization through diffusion. ICRA 2023.</i>
+
+<br>
+
+<i>Barad, K. R., Orsula, A., Richard, A., Dentler, J., Olivares-Mendez, M., \& Martinez, C. (2023). GraspLDM: Generative 6-DoF Grasp Synthesis using Latent Diffusion Models. arXiv preprint.</i>
+
+<br>
+
+<i>Chen, H., Xu, B., \& Leutenegger, S. (2024). FuncGrasp: Learning Object-Centric Neural Grasp Functions from Single Annotated Example Object. arXiv preprint.</i>
+
+<br>
+
+<i>Brohan, A., Brown, N., Carbajal, J., Chebotar, Y., Dabis, J., Finn, C., ...& Zitkovich, B. (2022). Rt-1: Robotics transformer for real-world control at scale. arXiv preprint arXiv:2212.06817.</i>
+
+<br>
+
+<i>Brohan, A., Brown, N., Carbajal, J., Chebotar, Y., Chen, X., Choromanski, K., ...& Zitkovich, B. (2023). Rt-2: Vision-language-action models transfer web knowledge to robotic control. arXiv preprint arXiv:2307.15</i>
+
+<br>
+
+<i>Thompson, N. C., Greenewald, K., Lee, K.,& Manso, G. F. (2020). The computational limits of deep learning. arXiv preprint arXiv:2007.05558.</i>
+
+<br>
+
+<i>Newbury, R., Gu, M., Chumbley, L., Mousavian, A., Eppner, C., Leitner, J., ...& Cosgun, A. (2023). Deep learning approaches to grasp synthesis: A review. IEEE Transactions on Robotics.</i>
+
+<br>
+
+<i>Sahbani, A., El-Khoury, S.,& Bidaud, P. (2012). An overview of 3D object grasp synthesis algorithms. Robotics and Autonomous Systems, 60(3), 326-336</i>
 
 <br>
 
@@ -572,6 +558,10 @@ AD011014320).
 
 <br>
 
+<i>Tyree, S., Tremblay, J., To, T., Cheng, J., Mosier, T., Smith, J., & Birchfield, S. (2022, October). 6-DoF pose estimation of household objects for robotic manipulation: An accessible dataset and benchmark. In 2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (pp. 13081-13088). IEEE.</i>
+
+<br>
+
 <i>Y. Labbé, L. Manuelli, A. Mousavian, S. Tyree, S. Birchfield, J. Tremblay, J. Carpentier, M. Aubry, D. Fox, and J. Sivic, “MegaPose: 6D Pose Estimation of Novel Objects via Render & Compare,” in 6th Annual Conference on Robot Learning, Aug. 2022.</i>
 
 <br>
@@ -579,14 +569,12 @@ AD011014320).
 <i>M. Stoiber, M. Sundermeyer, and R. Triebel, “Iterative Corresponding Geometry: Fusing Region and Depth for Highly Efficient 3D Tracking of Textureless Objects,” in 2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). New Orleans, LA, USA: IEEE, June 2022, pp. 6845–6855.</i>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
 
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 

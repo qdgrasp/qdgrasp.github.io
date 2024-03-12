@@ -14,6 +14,14 @@ body {
   margin: 0 auto;
 }
 
+.new-container {
+      width: 100%; /* Adjust the width as needed */
+      margin: 0 auto;
+      padding: 15px;
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 20px; /* Adjust the gap between columns */
+    }
 
 // Header, feature and footer
 .header,

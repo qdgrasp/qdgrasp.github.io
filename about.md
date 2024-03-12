@@ -105,7 +105,7 @@
 
 <i>By alphabetical order</i>
 
-Faïz Ben Amar, François Hélénon, Hippolythe Watrelot, Johann Huber, Miranda Coninx, Stéphane Doncieux
+Elie Chelly, Faïz Ben Amar, François Hélénon, Hippolythe Watrelot, Johann Huber, Mahdi Khoramshahi, Mathilde Kappel, Miranda Coninx, Stéphane Doncieux
 
 
 <br>
