@@ -57,11 +57,12 @@
 </div>
 <br>
 <p align="justify">
-&bull; <font><i>QDGset: A Large Scale Grasping Dataset Generated with Quality-Diversity, Huber, J., Hélénon, F., Kappel, Páez-Ubieta, I. L.,  Puente, S. T., Gil, P., Ben Amar, F., Doncieux, S. (2024)</i></font> (Paper | Blog post | Code | Video)<br><br>
+&bull; <font><i>QDGset: A Large Scale Grasping Dataset Generated with Quality-Diversity, Huber, J., Hélénon, F., Kappel, Páez-Ubieta, I. L.,  Puente, S. T., Gil, P., Ben Amar, F., Doncieux, S. (2024)</i></font> (<a href="https://arxiv.org/abs/2410.02319" target="_blank"><b>Paper</b></a> | Appendices | <a href="http://qdgrasp.github.io/qdg_set/"><b>Blog post</b></a> | Code | Video | Dataset)<br><br>
 </p>  
 <div align="center" style="vertical-align:bottom ; text-align:center">
 	<i>The paper has just been submitted. More details are comming in the following days!</i>
 </div>
+
 <br>
 <br>
 <br>
@@ -75,6 +76,9 @@
 <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" style="width:20px;"> &nbsp; <font color="#1d2769" style="font-size:1.3rem;font-family:'Merriweather',serif;font-weight: bold;"><a href="https://gitlab.isir.upmc.fr/l2g/qd_grasp">QDG</a></font><font style="font-size:1.3rem;font-family:'Merriweather',serif;font-weight: bold;">: generating reach-and-grasp trajectories
 <br></font>
 <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" style="width:20px;"> &nbsp; <font color="#1d2769" style="font-size:1.3rem;font-family:'Merriweather',serif;font-weight: bold;"><a href="https://gitlab.isir.upmc.fr/l2g/qd_grasp_6dof">QDG-6DoF</a></font><font style="font-size:1.3rem;font-family:'Merriweather',serif;font-weight: bold;">: generating 6DoF grasp poses</font> <span style="font-size:1.3rem;font-family:'Merriweather',serif;color:#FF5733;font-weight: bold;">[recommended]</span>
+
+
+
 
 <br>
 <br>

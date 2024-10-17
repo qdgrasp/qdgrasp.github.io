@@ -71,7 +71,7 @@ The most commonly used grasping dataset of the past few years is ACRONYM (Eppner
 
 <p align="justify"> 
 <font style="font-size:1.3rem;font-family:'Georgia',serif;">
-However, ACRONYM grasps have been generated with basing sampling schemes (Eppner et al., 2019). A search space is designed such that each element of that space can be projected into the SE(3) space of 6D grasp poses. The search space is randomly sampled: what makes this framework efficient is the usage of priors to generate successful grasps more easily.
+However, ACRONYM grasps have been generated with basic sampling schemes (Eppner et al., 2019). A search space is designed such that each element of that space can be projected into the SE(3) space of 6D grasp poses. The search space is randomly sampled: what makes this framework efficient is the usage of priors to generate successful grasps more easily.
 </font>
 </p>
 
