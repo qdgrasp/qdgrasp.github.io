@@ -1,6 +1,15 @@
 ---
 ---
 
+<!-- LOAD ModelViewer libraries for 3D display and opening of .glb file compressed with draco -->
+<script src="https://www.gstatic.com/draco/versioned/decoders/1.5.7/draco_wasm_wrapper.js">
+</script>
+<script>
+self.ModelViewerElement = self.ModelViewerElement || {};
+self.ModelViewerElement.dracoDecoderLocation = "https://www.gstatic.com/draco/versioned/decoders/";
+</script>
+<script type="module"  src="/assets/scripts/model-viewer.min.js"></script>
+
 
 <br>
 <br>
@@ -51,7 +60,7 @@ Recent studies are increasingly leveraging automatically generated grasping data
 
 <p align="justify"> 
 <font style="font-size:1.3rem;font-family:'Georgia',serif;">
-The most commonly used dataset is ACRONYM, a large set of object-centric 2-finger grasp poses (Eppner et al., 2021). ACRONYM has been generated with basic sampling schemes, which <a href="https://qdgrasp.github.io/generating_grasp_poses/">were proven significantly less sample efficient than a quality-diversity-based approach</a>. The corresponding framework, QDG-6DoF, combines Quality-Diversity optimisation (Cully et al., 2022) with robotic priors to accelerate the discovery of diverse and robust grasps. 
+The most commonly used dataset is ACRONYM, a large set of object-centric 2-finger grasp poses (Eppner et al., 2021). ACRONYM has been generated with basic sampling schemes, which <a href="{{site.url}}/generating_grasp_poses/">were proven significantly less sample efficient than a quality-diversity-based approach</a>. The corresponding framework, QDG-6DoF, combines Quality-Diversity optimisation (Cully et al., 2022) with robotic priors to accelerate the discovery of diverse and robust grasps. 
 </font>
 </p>
 
@@ -236,7 +245,7 @@ In an experimental study, 76% over the 431 runs lead to more robust grasps when 
 
 <p align="justify"> 
 <font style="font-size:1.3rem;font-family:'Georgia',serif;">
-Building on these results, we have created QDGset, a large-scale dataset of 62.000.000 object-centric grasp poses for about 40.000 objects. Each grasp is labeled with a probability to transfer in the real world, using the domain-randomization-based criterion <a href="https://qdgrasp.github.io/sim2real_labelling/">introduced in a previous work</a>.
+Building on these results, we have created QDGset, a large-scale dataset of 62.000.000 object-centric grasp poses for about 40.000 objects. Each grasp is labeled with a probability to transfer in the real world, using the domain-randomization-based criterion <a href="{{site.url}}/sim2real_labelling/">introduced in a previous work</a>.
 </font>
 </p>
 
@@ -274,6 +283,57 @@ QDGset contains objects from a wide range of object datasets—including primiti
 <div align="center" style="vertical-align:bottom ; text-align:center">
 	<font color="#b7b7b7"><b>Number of successful grasps per object. Most of the distributions lie between 1000 and 5000 grasps per objects. This reflects the complexity of the subset of objects.</b></font>
 </div>
+
+
+<br/>
+
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  <!-- background-color: #2196F3; -->
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+<p>
+ <div class="grid-container">
+  <div class="grid-item"> Power drill (ycb) 
+  <model-viewer alt="Power drill object and associated grasps where color of the gripper varies depending on robustness. Dark blue represent the less robust grasps while light red represents the most robust" src="/assets/meshes/power_drill.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
+  <div class="grid-item">Mug (ycb) 
+  <model-viewer alt="Mug object and associated grasps where color of the gripper varies depending on robustness. Dark blue represent the less robust grasps while light red represents the most robust" src="/assets/meshes/mug.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
+</div>
+<div align="center" style="vertical-align:bottom ; text-align:center">
+	<font color="#b7b7b7"><b>
+Grasps subsample</b> for two ycb objects (dark blue represents grasps that are less robust while light red represents grasps that are more robust i.e more likely to transfer)</font>
+</div>
+</p>
+
+<br/>
+
+<p>
+ <div class="grid-container">
+  <div class="grid-item"> kit_obj_25 (kit) 
+  <model-viewer alt="Kit object number 25 and associated grasps where color of the gripper varies depending on robustness. Dark blue represent the less robust grasps while light red represents the most robust" src="/assets/meshes/kit_obj_25.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
+  <div class="grid-item">kit_obj_25_da_2 (kit_augmented) 
+  <model-viewer alt="Kit object number 25, augmented, and associated bootstrapped grasps where color of the gripper varies depending on robustness. Dark blue represent the less robust grasps while light red represents the most robust" src="/assets/meshes/kit_obj_25_da_2.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
+<div class="grid-item">kit_obj_25_da_5 (kit_augmented) 
+  <model-viewer alt="Kit object number 25, augmented, and associated bootstrapped  grasps where color of the gripper varies depending on robustness. Dark blue represent the less robust grasps while light red represents the most robust" src="/assets/meshes/kit_obj_25_da_5.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
+<div class="grid-item">kit_obj_25_da_10 (kit_augmented) 
+  <model-viewer alt="Kit object number 25, augmented, and associated bootstrapped  grasps where color of the gripper varies depending on robustness. Dark blue represent the less robust grasps while light red represents the most robust" src="/assets/meshes/kit_obj_25_da_10.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
+</div>
+<div align="center" style="vertical-align:bottom ; text-align:center">
+	<font color="#b7b7b7"><b>
+Grasps and bootstrapped grasps subsample</b> for one kit objects and some of its augmentations (dark blue represents grasps that are less robust while light red represents grasps that are more robust i.e more likely to transfer)</font>
+</div>
+</p>
+
 
 
 <br>
