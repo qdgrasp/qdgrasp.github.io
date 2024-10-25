@@ -57,7 +57,7 @@
 </div>
 <br>
 <p align="justify">
-&bull; <font><i>QDGset: A Large Scale Grasping Dataset Generated with Quality-Diversity, Huber, J., Hélénon, F., Kappel, Páez-Ubieta, I. L.,  Puente, S. T., Gil, P., Ben Amar, F., Doncieux, S. (2024)</i></font> (<a href="https://arxiv.org/abs/2410.02319" target="_blank"><b>Paper</b></a> | Appendices | <a href="{{site.url}}/qdg_set/"><b>Blog post</b></a> | Code |  <a href="https://cloud.isir.upmc.fr/s/3qTPBLeHFF5WFwf"><b>Video</b></a> | Dataset)<br><br>
+&bull; <font><i>QDGset: A Large Scale Grasping Dataset Generated with Quality-Diversity, Huber, J., Hélénon, F., Kappel, Páez-Ubieta, I. L.,  Puente, S. T., Gil, P., Ben Amar, F., Doncieux, S. (2024)</i></font> (<a href="https://arxiv.org/abs/2410.02319" target="_blank"><b>Paper</b></a> | Appendices | <a href="{{site.url}}/qdg_set/"><b>Blog post</b></a> | Code |  <a href="https://cloud.isir.upmc.fr/s/3qTPBLeHFF5WFwf"><b>Video</b></a> |  <a href="https://huggingface.co/datasets/QDGrasp/QDGset_no_shapenet"><b>Dataset</b></a>)<br><br>
 </p>  
 <div align="center" style="vertical-align:bottom ; text-align:center">
 	<i>The paper has just been submitted. More details are comming in the following days!</i>
