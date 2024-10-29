@@ -41,7 +41,7 @@
 </div>
 <br>
 <p align="justify"> 
-&bull; <font><i>Toward a Plug-and-Play Vision based Graspng Module in Robotics, Hélénon, F., Huber, J., Ben Amar, F., Doncieux, S. (2024)</i></font> (<a href="https://arxiv.org/abs/2310.04349" target="_blank"><b>Paper</b></a> | <a href="{{site.url}}/object_pose_adaptation/"><b>Blog post</b></a> | <a href="https://cloud.isir.upmc.fr/s/sqXpAtrrkSiM3SX"><b>Video</b></a>)<br><br>
+&bull; <font><i>Toward a Plug-and-Play Vision based Graspng Module in Robotics, Hélénon, F., Huber, J., Ben Amar, F., Doncieux, S. (2024)</i></font> (<a href="https://arxiv.org/abs/2310.04349" target="_blank"><b>Paper</b></a> | <a href="{{site.url}}/object_pose_adaptation/"><b>Blog post</b></a> | <a href="https://cloud.isir.upmc.fr/s/Z6Y6XKtiWBZxgnf"><b>Video</b></a>)<br><br>
 </p>
 <div align="center" style="vertical-align:bottom ; text-align:center">
 	<img src="/assets/blog_posts/qd_adapt/mug_tracking_simu_x4speedup.gif" style="width:333px;">
