@@ -59,29 +59,7 @@
 <p align="justify">
 &bull; <font><i>QDGset: A Large Scale Grasping Dataset Generated with Quality-Diversity, Huber, J., Hélénon, F., Kappel, Páez-Ubieta, I. L.,  Puente, S. T., Gil, P., Ben Amar, F., Doncieux, S. (2024)</i></font> (<a href="https://arxiv.org/abs/2410.02319" target="_blank"><b>Paper</b></a> | <a href="{{site.url}}/qdg_set/"><b>Blog post</b></a> | <a href="https://gitlab.isir.upmc.fr/l2g/qd_grasp_6dof"><b>Code</b></a> |  <a href="https://cloud.isir.upmc.fr/s/3qTPBLeHFF5WFwf"><b>Video</b></a> |  <a href="https://huggingface.co/datasets/QDGrasp/QDGset_no_shapenet"><b>Dataset</b></a>)<br><br>
 </p>
-<style>
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  <!-- background-color: #2196F3; -->
-  padding: 10px;
-}
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}
-</style>
-<p>
- <div class="grid-container">
-  <div class="grid-item"> Power drill (ycb) 
-  <model-viewer alt="Power drill object and associated grasps where color of the gripper varies depending on robustness. Dark blue represent the less robust grasps while light red represents the most robust" src="/assets/meshes/power_drill.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
-  <div class="grid-item">Mug (ycb) 
-  <model-viewer alt="Mug object and associated grasps where color of the gripper varies depending on robustness. Dark blue represent the less robust grasps while light red represents the most robust" src="/assets/meshes/mug.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
-</div>
-</p>
+
 
 <br>
 <br>
